@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Calculator</title>
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/jquery-3.5.1.js"></script>
-  <script src="js/scripts.js"></script>
+  <title>Temperature connverter</title>
+
 </head>
 <body>
-  <div class="container">
-    <h1>Calculator</h1>
-    <form id="add">
-      <div class="form-group">
-        <label for="add1">1st number:</label>
-        <input id="add1" class="form-control" type="text">
-      </div>
-      <div class="form-group">
-        <label for="add2">2nd number:</label>
-        <input id="add2" class="form-control" type="text">
-      </div>
-      <button type="submit" class="btn">Add!</button>
-    </form>
-  </div>
+  <h1>Calculator</h1>
+  <script src="js/scripts.js"></script>
 
-  <p id="result"></p>
+  <p><em>Type in your Farenheit value</em></p>
+
+  <p>
+    <label>Fahrenheit</label>
+    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+    oninput="temperatureConverter(this.value)"
+    onchange="temperatureConverter(this.value)">
+  </p>
+  <p>Celsius: <span id="outputCelsius"></span></p>
+
+  <script>
+    function temperatureConverter(valNum) {
+      valNum = parseFloat(valNum);
+      document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+    }
+    </script>
+
+
 </body>
 </html>
